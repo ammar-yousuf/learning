@@ -1,7 +1,7 @@
-require 'spec_helper'
+require_relative 'spec_helper'
 require 'pry'
 
-require 'yahoo_finance_client'
+require_relative 'yahoo_finance_client'
 
 describe YahooFinanceClient do
 	let(:client) { YahooFinanceClient.new }
@@ -20,6 +20,8 @@ describe YahooFinanceClient do
 	it "gets table" do
 		html = client.get_html("APPL")
 		table = client.get_table(html)		
-		expect(table.keys).to include("Market Cap")		
+		expect(table.keys).to include("Market Cap")
+		expect(table.keys).to include("Open")
+		expect(table.keys).to include("Prev Close")
 	end
 end

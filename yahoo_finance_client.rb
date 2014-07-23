@@ -22,8 +22,7 @@ class YahooFinanceClient
 				parsed = i.parent.content.split(":")				
 				table[parsed[0]] = parsed[1]
 			end			
-		end
-
+		end		
 		table
 	end
 end
