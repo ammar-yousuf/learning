@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'pry'
 
-require_relative '../../lib/yahoo_finance_client'
+require 'yahoo_finance_client'
 
 describe YahooFinanceClient do
 	let(:client) { YahooFinanceClient.new }
