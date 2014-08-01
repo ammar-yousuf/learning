@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<!-- ng-app is an Angular directive that will run our app.js Angular module when the document loads. 
+	This allows us to begin writing expression in our HTML code.
+-->
+<html ng-app="store">
 	<head>
 		<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
 	</head>
 
 	<body>
 		<script type="text/javascript" src="../angular.min.js"></script>		
+		<script type="text/javascript" src="app.js"></script>
+		<p>{{"hello" + " you"}}</p>
 	</body>
 </html>
