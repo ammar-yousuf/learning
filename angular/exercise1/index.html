@@ -13,11 +13,22 @@
   	<!-- The ng-controller directive attaches a controller class to this element in the view -->
   	<!-- The scope of our StoreController is only inside the div below -->
     <div ng-controller="StoreController as store">
-    	<!-- We are using the store object her locally inside the div -->
-    	<h1>{{store.product.name}}</h1>
-    	<h2>${{store.product.price}}</h2>
-    	<p>{{store.product.description}}</p>    	
-      <button ng-show="store.product.canPurchase">Add to Cart</botton>
+    	<div ng-repeat="product in store.products" ng-hide="product.soldOut">
+        <!-- We are using the store object her locally inside the div -->
+      	<h1>{{product.name}}</h1>
+      	<h2>${{product.price}}</h2>
+      	<p>{{product.description}}</p>    	
+        <button ng-show="store.product.canPurchase">Add to Cart</botton>
+      </div>
     </div>
   </body>
 </html>
+
+<!-- The directives in this page are: ng-app, ng-controller, ng-repeat, and ng-show.  These are the
+markers on DOM elements that trigger specific JS behavior. -->
+
+<!-- Modules are a sort of main method, but in Angular we don't have a main method, they hold all the 
+parts of the Angular app: controllers, services, filters and directives. -->
+
+<!-- Controllers hold all the Angular application's behavior.  In this case we have the StoreController
+defined in the app.js file. -->

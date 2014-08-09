@@ -4,14 +4,24 @@
 	app.controller('StoreController', function(){
 		// Set a property of this controller to the gem we have defined below
 		// Once we have this defined we can access the data in the HTML
-		this.product = gem;
+		this.products = gems;
 	});
 
-	var gem = {
-		name: 'Dodecahedron',
-		price: 2.95,
-		description: '....',
-		canPurchase: false
-	}
+	var gems = [
+		{
+			name: 'Dodecahedron',
+			price: 2.95,
+			description: '....',
+			canPurchase: false,
+			soldOut: false
+		},
+		{
+			name: 'Pentagonal Gem',
+			price: 5.95,
+			description: 'This is a gem in the shape of a pentagon',
+			canPurchase: true,
+			soldOut: false
+		}
+	];
 
 })();
