@@ -7,6 +7,9 @@ class ExcelLoader
     s.default_sheet = s.sheets.first
     # Returns a Hash version of the spreadsheet's first page
     result = read_each_row(s)
+
+    # Now must update the record in the database
+    update_database_table(result)  
   end
 
   def self.read_each_row(sheet)
@@ -24,5 +27,21 @@ class ExcelLoader
       sheet_3d << new_row      
     end
     sheet_3d
+  end
+
+  def self.update_database_table(spreadsheet)
+    spreadsheet.each do |source|      
+      update_or_create_by({name: source["Name"]}, source)
+    end
+  end
+
+  def self.update_or_create_by(args, attributes)
+    d = Source.find_or_create_by(args)    
+    
+    r = d.update_attributes({})
+    # Fill in the hash above with what attributes you want to update.
+
+    puts "*"*100
+    puts "Successfully Updated" if r
   end
 end
