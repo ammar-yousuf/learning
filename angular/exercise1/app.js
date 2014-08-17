@@ -12,8 +12,8 @@
 			name: 'Dodecahedron',
 			price: 2.95,
 			description: '....',
-			canPurchase: false,
-			soldOut: false
+			canPurchase: true,
+			soldOut: true
 		},
 		{
 			name: 'Pentagonal Gem',

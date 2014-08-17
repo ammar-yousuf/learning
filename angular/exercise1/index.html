@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <!-- ng-app is an Angular directive that will run our app.js Angular module when the document loads. 
 	This allows us to begin writing expression in our HTML code.
 -->
@@ -13,12 +13,14 @@
   	<!-- The ng-controller directive attaches a controller class to this element in the view -->
   	<!-- The scope of our StoreController is only inside the div below -->
     <div ng-controller="StoreController as store">
-    	<div ng-repeat="product in store.products" ng-hide="product.soldOut">
-        <!-- We are using the store object her locally inside the div -->
-      	<h1>{{product.name}}</h1>
-      	<h2>${{product.price}}</h2>
-      	<p>{{product.description}}</p>    	
-        <button ng-show="store.product.canPurchase">Add to Cart</botton>
+    	<div ng-repeat="product in store.products">
+        <div ng-hide="product.soldOut">
+          <!-- We are using the store object her locally inside the div -->
+        	<h1>{{product.name}}</h1>
+        	<h2>${{product.price}}</h2>
+        	<p>{{product.description}}</p>    	
+          <button ng-show="store.product.canPurchase">Add to Cart</botton>
+        </div>
       </div>
     </div>
   </body>
